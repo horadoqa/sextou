@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <title>Hora do QA — Sextou !!!</title>
+
+  <meta
+    name="description"
+    content="13 playlists completas para você dominar QA de verdade — do básico ao avançado."
+  >
+
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --bg-secondary: #ffffff;
+
+      --card: #ffffff;
+      --card-hover: #ffffff;
+
+      --primary: #6d4aff;
+      --primary-dark: #5635e8;
+      --primary-light: #8b6cff;
+
+      --cyan: #0891b2;
+      --green: #10b981;
+
+      --text: #172033;
+      --text-secondary: #647089;
+      --text-muted: #8993a7;
+
+      --border: #e7eaf1;
+
+      --shadow:
+        0 10px 30px rgba(30, 41, 59, 0.07);
+
+      --shadow-hover:
+        0 18px 45px rgba(30, 41, 59, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 10% 5%,
+          rgba(109, 74, 255, 0.08),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(8, 145, 178, 0.07),
+          transparent 25%
+        ),
+        var(--bg);
+
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 72vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 0 70px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(109, 74, 255, 0.13),
+          transparent 68%
+        );
+
+      top: -260px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo {
+      width: 112px;
+      height: 112px;
+
+      margin: 0 auto 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 28px;
+
+      background: #ffffff;
+
+      border: 1px solid #e4e7ef;
+
+      box-shadow:
+        0 12px 35px rgba(30, 41, 59, 0.10),
+        0 0 0 7px rgba(109, 74, 255, 0.04);
+
+      position: relative;
+    }
+
+    .logo img {
+      width: 100px;
+      height: 100px;
+
+      object-fit: contain;
+
+      border-radius: 22px;
+    }
+
+    /* =========================
+       BADGE
+    ========================= */
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 15px;
+
+      border-radius: 999px;
+
+      background: rgba(109, 74, 255, 0.07);
+
+      border: 1px solid rgba(109, 74, 255, 0.16);
+
+      color: var(--primary);
+
+      font-size: 13px;
+      font-weight: 750;
+
+      margin-bottom: 22px;
+    }
+
+    .badge::before {
+      content: "";
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 0 4px rgba(16, 185, 129, 0.10);
+    }
+
+    /* =========================
+       TITLES
+    ========================= */
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.5rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.065em;
+
+      margin-bottom: 26px;
+
+      color: #151b2d;
+    }
+
+    h1 span {
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          #7959ff,
+          var(--cyan)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 720px;
+
+      margin: 0 auto;
+
+      color: var(--text-secondary);
+
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-subtitle strong {
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-header {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      letter-spacing: -0.045em;
+
+      color: #151b2d;
+
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+    }
+
+    /* =========================
+       PLAYLIST GRID
+    ========================= */
+
+    .playlist-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    /* =========================
+       PLAYLIST CARD
+    ========================= */
+
+    .playlist {
+      position: relative;
+
+      padding: 25px;
+
+      min-height: 225px;
+
+      display: flex;
+      flex-direction: column;
+
+      border-radius: 20px;
+
+      background: rgba(255, 255, 255, 0.90);
+
+      border: 1px solid var(--border);
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+      overflow: hidden;
+    }
+
+    /*
+      Pequeno detalhe colorido no topo
+    */
+
+    .playlist::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          #8b6cff,
+          var(--cyan)
+        );
+
+      opacity: 0;
+
+      transition: opacity 0.25s ease;
+    }
+
+    /*
+      Glow discreto
+    */
+
+    .playlist::after {
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      border-radius: 50%;
+
+      background: rgba(109, 74, 255, 0.06);
+
+      filter: blur(35px);
+
+      top: -65px;
+      right: -50px;
+
+      pointer-events: none;
+    }
+
+    .playlist:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(109, 74, 255, 0.20);
+
+      box-shadow: var(--shadow-hover);
+    }
+
+    .playlist:hover::before {
+      opacity: 1;
+    }
+
+    /* =========================
+       NUMBER
+    ========================= */
+
+    .number {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 11px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(109, 74, 255, 0.10),
+          rgba(109, 74, 255, 0.05)
+        );
+
+      border: 1px solid rgba(109, 74, 255, 0.14);
+
+      color: var(--primary);
+
+      font-weight: 800;
+      font-size: 13px;
+
+      margin-bottom: 19px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .playlist h3 {
+      font-size: 1.05rem;
+
+      line-height: 1.35;
+
+      color: #20283a;
+
+      margin-bottom: 8px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .playlist p {
+      color: var(--text-secondary);
+
+      font-size: 0.88rem;
+
+      margin-bottom: 20px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =========================
+       LINK
+    ========================= */
+
+    .playlist-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: auto;
+
+      color: var(--primary);
+
+      font-size: 0.88rem;
+
+      font-weight: 800;
+
+      position: relative;
+      z-index: 1;
+
+      transition:
+        color 0.2s ease;
+    }
+
+    .playlist-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .arrow {
+      transition:
+        transform 0.2s ease;
+    }
+
+    .playlist-link:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      margin: 40px 0 80px;
+
+      padding: 65px 40px;
+
+      text-align: center;
+
+      border-radius: 30px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f0edff 0%,
+          #f8f7ff 48%,
+          #edfaff 100%
+        );
+
+      border: 1px solid rgba(109, 74, 255, 0.13);
+
+      box-shadow:
+        0 18px 50px rgba(30, 41, 59, 0.08);
+    }
+
+    .cta::before {
+      content: "";
+
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(109, 74, 255, 0.12),
+          transparent 68%
+        );
+
+      border-radius: 50%;
+
+      top: -190px;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    .cta-content {
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      letter-spacing: -0.045em;
+
+      color: #171d30;
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+
+      margin: 0 auto 28px;
+
+      color: var(--text-secondary);
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .buttons {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      min-height: 49px;
+
+      padding: 0 23px;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      font-size: 0.9rem;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #7655ff,
+          #603ee9
+        );
+
+      box-shadow:
+        0 10px 25px rgba(109, 74, 255, 0.22);
+    }
+
+    .btn-primary:hover {
+      box-shadow:
+        0 14px 30px rgba(109, 74, 255, 0.30);
+    }
+
+    .btn-secondary {
+      color: #343d52;
+
+      background: #ffffff;
+
+      border: 1px solid #dfe3ec;
+
+      box-shadow:
+        0 5px 15px rgba(30, 41, 59, 0.05);
+    }
+
+    .btn-secondary:hover {
+      border-color:
+        rgba(109, 74, 255, 0.25);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid #e8ebf2;
+
+      padding: 35px 0 45px;
+
+      text-align: center;
+
+      background:
+        rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-message {
+      font-size: 1.2rem;
+
+      font-weight: 750;
+
+      color: #293247;
+
+      margin-bottom: 20px;
+    }
+
+    .hashtags {
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      color: #7b8598;
+
+      font-size: 0.82rem;
+
+      line-height: 2;
+    }
+
+    .copyright {
+      margin-top: 25px;
+
+      color: #9aa3b3;
+
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .playlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 60px 0 50px;
+      }
+
+      .logo {
+        width: 96px;
+        height: 96px;
+
+        border-radius: 24px;
+      }
+
+      .logo img {
+        width: 86px;
+        height: 86px;
+      }
+
+      .playlist-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .section-header {
+        margin-bottom: 32px;
+      }
+
+      .playlist {
+        min-height: 210px;
+      }
+
+      .cta {
+        padding: 45px 22px;
+
+        border-radius: 24px;
+
+        margin-bottom: 50px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <div class="logo" aria-label="Hora do QA">
+          <img
+            src="./logo.png"
+            alt="Hora do QA"
+            width="100"
+            height="100"
+          >
+        </div>
+
+        <div class="badge">
+          Conteúdo para quem vive QA
+        </div>
+
+        <h1>
+          Hora do QA<br>
+          <span>Sextou !!!</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <strong>13 playlists completas</strong>
+          pra você dominar QA de verdade.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PLAYLISTS -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <h2>Trilha completa de QA</h2>
+
+          <p>
+            Conteúdo simples, prático e com exemplos reais
+            para aplicar no dia a dia.
+          </p>
+
+        </div>
+
+
+        <div class="playlist-grid">
+
+          <article class="playlist">
+            <div class="number">01</div>
+            <h3>Testes Manuais</h3>
+            <p>
+              Fundamentos e práticas essenciais para começar em QA.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VI3X8vPYK55GuOqUL7t9iPP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">02</div>
+            <h3>Testes Automatizados</h3>
+            <p>
+              Aprenda os conceitos e fundamentos da automação de testes.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLJqlPhLIAv7XvpLZ4UOIJm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">03</div>
+            <h3>Cypress</h3>
+            <p>
+              Automação de aplicações web utilizando Cypress.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKgzA9yTe6mtcZda1COlQL3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">04</div>
+            <h3>Playwright</h3>
+            <p>
+              Testes modernos e automação end-to-end com Playwright.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKN5Vx-d1Z-iQ_8w6UF4-Ys"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">05</div>
+            <h3>Robot Framework</h3>
+            <p>
+              Automação baseada em keywords de forma prática e objetiva.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIPrx37F1EO0uk3vVweUZns"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">06</div>
+            <h3>Selenium WebDriver</h3>
+            <p>
+              Automação web e os principais conceitos do Selenium.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIq6455bArB616Dxmunnnv3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">07</div>
+            <h3>Postman — APIs</h3>
+            <p>
+              Testes de APIs e validação de serviços utilizando Postman.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKaB_aarRsJljsTeu22YSLe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">08</div>
+            <h3>Performance com Grafana k6</h3>
+            <p>
+              Testes de performance modernos utilizando k6.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJabXS_eotTNh2Fg92hf9cX"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">09</div>
+            <h3>Performance — Conceitos e Práticas</h3>
+            <p>
+              Fundamentos, estratégias e boas práticas de performance.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKP-6o10Un6J_gsgTA-LTBh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">10</div>
+            <h3>Performance com JMeter</h3>
+            <p>
+              Aprenda testes de carga e performance utilizando JMeter.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJR3kLwJl_U69lXO495E6Zn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">11</div>
+            <h3>Cucumber — BDD</h3>
+            <p>
+              Desenvolvimento orientado por comportamento aplicado a QA.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLx7w7qL4CrqyKuE1M8nWpR"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">12</div>
+            <h3>Linux</h3>
+            <p>
+              Comandos e conhecimentos Linux essenciais para QA.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIk_ejM3a7E0wGJXy-Adohs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+
+          <article class="playlist">
+            <div class="number">13</div>
+            <h3>Git + GitHub</h3>
+            <p>
+              Versionamento e colaboração para projetos de tecnologia.
+            </p>
+
+            <a
+              class="playlist-link"
+              href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJkrgF4uj-CpnZ4ZHPMbXlf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar playlist
+              <span class="arrow">→</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="container">
+
+      <div class="cta">
+
+        <div class="cta-content">
+
+          <h2>Vamos evoluir juntos? 🚀</h2>
+
+          <p>
+            Tudo explicado de forma simples, prática e com exemplos reais,
+            pra você aplicar no dia a dia e evoluir mais rápido.
+          </p>
+
+          <div class="buttons">
+
+            <a
+              class="btn btn-primary"
+              href="https://www.youtube.com/@horadoqa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ▶ Inscreva-se no canal
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://discord.gg/8h2HHdKPe5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 Entrar no Discord
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-message">
+        Te espero por lá… 👊
+      </div>
+
+      <p class="hashtags">
+        #QA #TestesDeSoftware #AutomaçãoDeTestes #QualityAssurance
+        #Cypress #Playwright #Selenium #RobotFramework #Postman
+        #PerformanceTesting #JMeter #k6 #DevOps #GitHub #CarreiraTech
+      </p>
+
+      <div class="copyright">
+        Hora do QA • Sextou !!!
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
