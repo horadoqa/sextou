@@ -1,480 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta name="description" content="13 playlists completas para você dominar QA de verdade — do básico ao avançado.">
+
   <title>Hora do QA — Sextou !!!</title>
-
-  <meta
-    name="description"
-    content="13 playlists completas para você dominar QA de verdade — do básico ao avançado."
-  >
-
-  <style>
-    :root {
-      --bg: #080b12;
-      --bg-secondary: #0d111b;
-      --card: rgba(18, 24, 38, 0.78);
-      --card-hover: rgba(25, 33, 52, 0.95);
-      --primary: #7c5cff;
-      --primary-light: #a78bfa;
-      --cyan: #22d3ee;
-      --green: #34d399;
-      --text: #f8fafc;
-      --text-secondary: #a8b3c7;
-      --border: rgba(255, 255, 255, 0.09);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(124, 92, 255, 0.18), transparent 30%),
-        radial-gradient(circle at 85% 20%, rgba(34, 211, 238, 0.12), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(52, 211, 153, 0.08), transparent 30%),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 0 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      background: rgba(124, 92, 255, 0.12);
-      filter: blur(80px);
-      top: -180px;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
-    }
-
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      background:
-        linear-gradient(145deg, #171d30, #090c14);
-
-      border: 1px solid rgba(167, 139, 250, 0.45);
-
-      box-shadow:
-        0 0 0 6px rgba(124, 92, 255, 0.06),
-        0 0 45px rgba(124, 92, 255, 0.28),
-        inset 0 0 30px rgba(124, 92, 255, 0.08);
-
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo span {
-      font-size: 13px;
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: white;
-    }
-
-    .logo strong {
-      display: block;
-      color: var(--primary-light);
-      font-size: 16px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(124, 92, 255, 0.1);
-      border: 1px solid rgba(124, 92, 255, 0.25);
-      color: var(--primary-light);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .badge::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 12px var(--green);
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-      margin-bottom: 24px;
-    }
-
-    h1 span {
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        var(--primary-light),
-        var(--cyan)
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--text-secondary);
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-    }
-
-    .hero-subtitle strong {
-      color: white;
-    }
-
-    /* =========================
-       PLAYLISTS
-    ========================= */
-
-    .section {
-      padding: 70px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    .section-header p {
-      color: var(--text-secondary);
-    }
-
-    .playlist-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .playlist {
-      position: relative;
-      padding: 24px;
-      border-radius: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
-      overflow: hidden;
-    }
-
-    .playlist::before {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(124, 92, 255, 0.09);
-      filter: blur(25px);
-      top: -40px;
-      right: -40px;
-    }
-
-    .playlist:hover {
-      transform: translateY(-6px);
-      background: var(--card-hover);
-      border-color: rgba(167, 139, 250, 0.4);
-    }
-
-    .number {
-      width: 36px;
-      height: 36px;
-      border-radius: 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(124, 92, 255, 0.12);
-      border: 1px solid rgba(124, 92, 255, 0.25);
-      color: var(--primary-light);
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    .playlist h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    .playlist p {
-      color: var(--text-secondary);
-      font-size: 0.88rem;
-      margin-bottom: 20px;
-    }
-
-    .playlist-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
-      font-size: 0.88rem;
-      font-weight: 700;
-      transition: color 0.2s ease;
-    }
-
-    .playlist-link:hover {
-      color: var(--cyan);
-    }
-
-    .arrow {
-      transition: transform 0.2s ease;
-    }
-
-    .playlist-link:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      margin: 40px 0 80px;
-      padding: 60px 40px;
-      text-align: center;
-      border-radius: 30px;
-      position: relative;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(124, 92, 255, 0.18),
-          rgba(34, 211, 238, 0.08)
-        );
-
-      border: 1px solid rgba(167, 139, 250, 0.2);
-      box-shadow: var(--shadow);
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: rgba(124, 92, 255, 0.12);
-      filter: blur(70px);
-      border-radius: 50%;
-      top: -150px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: var(--text-secondary);
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, #7c5cff, #5b43d6);
-      box-shadow: 0 10px 30px rgba(124, 92, 255, 0.25);
-    }
-
-    .btn-secondary {
-      color: white;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 35px 0 45px;
-      text-align: center;
-    }
-
-    .footer-message {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hashtags {
-      max-width: 850px;
-      margin: 0 auto;
-      color: #77839a;
-      font-size: 0.82rem;
-      line-height: 2;
-    }
-
-    .copyright {
-      margin-top: 25px;
-      color: #586276;
-      font-size: 0.78rem;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 900px) {
-      .playlist-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 28px, 1120px);
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 60px 0 50px;
-      }
-
-      .playlist-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 50px 0;
-      }
-
-      .cta {
-        padding: 45px 22px;
-        border-radius: 24px;
-        margin-bottom: 50px;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar Light Tech">
+    <span class="theme-icon" id="themeIcon">☀️</span>
+    <span id="themeText">Light Tech</span>
+  </button>
+
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero">
+
       <div class="container">
 
         <div class="logo" aria-label="Hora do QA">
-            
-          <span>
-            <img src="./logo.png" alt="Hora do QA" width="100" height="100">
+          <img src="./logo.png" alt="Hora do QA" width="100" height="100">
         </div>
 
         <div class="badge">
@@ -487,191 +44,285 @@
         </h1>
 
         <p class="hero-subtitle">
-          <strong>13 playlists completas</strong> pra você dominar QA de verdade.
+          <strong>13 playlists completas</strong>
+          pra você dominar QA de verdade.
         </p>
 
       </div>
+
     </section>
 
 
-    <!-- PLAYLISTS -->
+    <!-- =========================
+         PLAYLISTS
+    ========================== -->
+
     <section class="section">
+
       <div class="container">
 
         <div class="section-header">
+
           <h2>Trilha completa de QA</h2>
+
           <p>
-            Conteúdo simples, prático e com exemplos reais para aplicar no dia a dia.
+            Conteúdo simples, prático e com exemplos reais
+            para aplicar no dia a dia.
           </p>
+
         </div>
+
 
         <div class="playlist-grid">
 
+          <!-- 01 -->
           <article class="playlist">
             <div class="number">01</div>
+
             <h3>Testes Manuais</h3>
-            <p>Fundamentos e práticas essenciais para começar em QA.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VI3X8vPYK55GuOqUL7t9iPP"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Fundamentos e práticas essenciais para começar em QA.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VI3X8vPYK55GuOqUL7t9iPP"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 02 -->
           <article class="playlist">
             <div class="number">02</div>
+
             <h3>Testes Automatizados</h3>
-            <p>Aprenda os conceitos e fundamentos da automação de testes.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLJqlPhLIAv7XvpLZ4UOIJm"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Aprenda os conceitos e fundamentos da automação de testes.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLJqlPhLIAv7XvpLZ4UOIJm"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 03 -->
           <article class="playlist">
             <div class="number">03</div>
+
             <h3>Cypress</h3>
-            <p>Automação de aplicações web utilizando Cypress.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKgzA9yTe6mtcZda1COlQL3"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Automação de aplicações web utilizando Cypress.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKgzA9yTe6mtcZda1COlQL3"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 04 -->
           <article class="playlist">
             <div class="number">04</div>
+
             <h3>Playwright</h3>
-            <p>Testes modernos e automação end-to-end com Playwright.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKN5Vx-d1Z-iQ_8w6UF4-Ys"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Testes modernos e automação end-to-end com Playwright.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKN5Vx-d1Z-iQ_8w6UF4-Ys"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 05 -->
           <article class="playlist">
             <div class="number">05</div>
+
             <h3>Robot Framework</h3>
-            <p>Automação baseada em keywords de forma prática e objetiva.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIPrx37F1EO0uk3vVweUZns"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Automação baseada em keywords de forma prática e objetiva.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIPrx37F1EO0uk3vVweUZns"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 06 -->
           <article class="playlist">
             <div class="number">06</div>
+
             <h3>Selenium WebDriver</h3>
-            <p>Automação web e os principais conceitos do Selenium.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIq6455bArB616Dxmunnnv3"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Automação web e os principais conceitos do Selenium.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIq6455bArB616Dxmunnnv3"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 07 -->
           <article class="playlist">
             <div class="number">07</div>
+
             <h3>Postman — APIs</h3>
-            <p>Testes de APIs e validação de serviços utilizando Postman.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKaB_aarRsJljsTeu22YSLe"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Testes de APIs e validação de serviços utilizando Postman.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKaB_aarRsJljsTeu22YSLe"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 08 -->
           <article class="playlist">
             <div class="number">08</div>
+
             <h3>Performance com Grafana k6</h3>
-            <p>Testes de performance modernos utilizando k6.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJabXS_eotTNh2Fg92hf9cX"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Testes de performance modernos utilizando k6.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJabXS_eotTNh2Fg92hf9cX"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 09 -->
           <article class="playlist">
             <div class="number">09</div>
+
             <h3>Performance — Conceitos e Práticas</h3>
-            <p>Fundamentos, estratégias e boas práticas de performance.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKP-6o10Un6J_gsgTA-LTBh"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Fundamentos, estratégias e boas práticas de performance.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VKP-6o10Un6J_gsgTA-LTBh"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 10 -->
           <article class="playlist">
             <div class="number">10</div>
+
             <h3>Performance com JMeter</h3>
-            <p>Aprenda testes de carga e performance utilizando JMeter.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJR3kLwJl_U69lXO495E6Zn"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Aprenda testes de carga e performance utilizando JMeter.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJR3kLwJl_U69lXO495E6Zn"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 11 -->
           <article class="playlist">
             <div class="number">11</div>
+
             <h3>Cucumber — BDD</h3>
-            <p>Desenvolvimento orientado por comportamento aplicado a QA.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLx7w7qL4CrqyKuE1M8nWpR"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Desenvolvimento orientado por comportamento aplicado a QA.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VLx7w7qL4CrqyKuE1M8nWpR"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 12 -->
           <article class="playlist">
             <div class="number">12</div>
+
             <h3>Linux</h3>
-            <p>Comandos e conhecimentos Linux essenciais para QA.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIk_ejM3a7E0wGJXy-Adohs"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Comandos e conhecimentos Linux essenciais para QA.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VIk_ejM3a7E0wGJXy-Adohs"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
+
+          <!-- 13 -->
           <article class="playlist">
             <div class="number">13</div>
+
             <h3>Git + GitHub</h3>
-            <p>Versionamento e colaboração para projetos de tecnologia.</p>
-            <a class="playlist-link"
-               href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJkrgF4uj-CpnZ4ZHPMbXlf"
-               target="_blank"
-               rel="noopener noreferrer">
-              Acessar playlist <span class="arrow">→</span>
+
+            <p>
+              Versionamento e colaboração para projetos de tecnologia.
+            </p>
+
+            <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLeE4t9Tme9VJkrgF4uj-CpnZ4ZHPMbXlf"
+              target="_blank" rel="noopener noreferrer">
+              Acessar playlist
+              <span class="arrow">→</span>
             </a>
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- CTA -->
+    <!-- =========================
+         CTA
+    ========================== -->
+
     <section class="container">
 
       <div class="cta">
+
         <div class="cta-content">
 
           <h2>Vamos evoluir juntos? 🚀</h2>
@@ -683,27 +334,19 @@
 
           <div class="buttons">
 
-            <a
-              class="btn btn-primary"
-              href="https://www.youtube.com/@horadoqa"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="btn btn-primary" href="https://www.youtube.com/@horadoqa" target="_blank"
+              rel="noopener noreferrer">
               ▶ Inscreva-se no canal
             </a>
 
-            <a
-              class="btn btn-secondary"
-              href="https://discord.gg/8h2HHdKPe5"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="btn btn-secondary" href="https://discord.gg/8h2HHdKPe5" target="_blank" rel="noopener noreferrer">
               💬 Entrar no Discord
             </a>
 
           </div>
 
         </div>
+
       </div>
 
     </section>
@@ -711,8 +354,12 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+
     <div class="container">
 
       <div class="footer-message">
@@ -730,7 +377,12 @@
       </div>
 
     </div>
+
   </footer>
 
+
+  <script src="js/script.js"></script>
+
 </body>
+
 </html>
