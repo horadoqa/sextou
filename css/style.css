@@ -1,6 +1,7 @@
 /* =========================================
 RESET
 ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,26 +14,26 @@ html {
 
 body {
     min-height: 100vh;
+
     font-family:
-        Inter,
+        "Manrope",
         ui-sans-serif,
         system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
         sans-serif;
 
     color: var(--text);
+
     background:
-        radial-gradient(circle at 15% 10%,
-            var(--glow-primary),
-            transparent 30%),
-        radial-gradient(circle at 85% 20%,
-            var(--glow-cyan),
-            transparent 28%),
-        radial-gradient(circle at 50% 90%,
+        radial-gradient(
+            circle at 15% 5%,
             var(--glow-green),
-            transparent 30%),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            var(--glow-gold),
+            transparent 24%
+        ),
         var(--bg);
 
     line-height: 1.6;
@@ -51,72 +52,93 @@ button {
     font: inherit;
 }
 
+
 /* =========================================
-DARK TECH
+DARK — VERDE PROFUNDO
 ========================================= */
 
 :root,
 html[data-theme="dark"] {
-    --bg: #080b12;
-    --bg-secondary: #0d111b;
 
-    --card: rgba(18, 24, 38, 0.78);
-    --card-hover: rgba(25, 33, 52, 0.95);
+    --bg: #0F3D2E;
+    --bg-secondary: #153F31;
 
-    --primary: #7c5cff;
-    --primary-light: #a78bfa;
-    --cyan: #22d3ee;
-    --green: #34d399;
+    --card: rgba(18, 52, 39, 0.88);
+    --card-hover: rgba(27, 66, 49, 0.96);
 
-    --text: #f8fafc;
-    --text-secondary: #a8b3c7;
+    --primary: #C99A44;
+    --primary-light: #D9B66B;
 
-    --border: rgba(255, 255, 255, 0.09);
+    --green: #8FE3B0;
+    --green-dark: #3F6F52;
 
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --gold: #C99A44;
+    --gold-light: #D9B66B;
 
-    --glow-primary: rgba(124, 92, 255, 0.18);
-    --glow-cyan: rgba(34, 211, 238, 0.12);
-    --glow-green: rgba(52, 211, 153, 0.08);
+    --text: #F3EFE6;
+    --text-secondary: #C5CFC7;
 
-    --topbar-bg: rgba(8, 11, 18, 0.35);
-    --button-secondary: rgba(255, 255, 255, 0.06);
+    --ink: #12201A;
+
+    --border: rgba(243, 239, 230, 0.14);
+
+    --shadow:
+        0 20px 55px rgba(3, 19, 13, 0.28);
+
+    --glow-green: rgba(143, 227, 176, 0.07);
+    --glow-gold: rgba(201, 154, 68, 0.07);
+
+    --topbar-bg: rgba(15, 61, 46, 0.72);
+
+    --button-secondary:
+        rgba(243, 239, 230, 0.07);
 
     color-scheme: dark;
 }
 
+
 /* =========================================
-LIGHT TECH
+LIGHT — MARFIM
 ========================================= */
 
 html[data-theme="light"] {
-    --bg: #f4f7fb;
-    --bg-secondary: #ffffff;
 
-    --card: rgba(255, 255, 255, 0.86);
-    --card-hover: #ffffff;
+    --bg: #F3EFE6;
+    --bg-secondary: #FAF8F2;
 
-    --primary: #6346e8;
-    --primary-light: #5b43d6;
-    --cyan: #0891b2;
-    --green: #059669;
+    --card: rgba(255, 255, 255, 0.72);
+    --card-hover: #FFFFFF;
 
-    --text: #101827;
-    --text-secondary: #5f6b7a;
+    --primary: #0F3D2E;
+    --primary-light: #3F6F52;
 
-    --border: rgba(15, 23, 42, 0.10);
+    --green: #8FE3B0;
+    --green-dark: #3F6F52;
 
-    --shadow: 0 20px 55px rgba(40, 55, 80, 0.12);
+    --gold: #C99A44;
+    --gold-light: #B98732;
 
-    --glow-primary: rgba(124, 92, 255, 0.12);
-    --glow-cyan: rgba(34, 211, 238, 0.10);
-    --glow-green: rgba(52, 211, 153, 0.08);
+    --text: #12201A;
+    --text-secondary: #58675E;
 
-    --topbar-bg: rgba(244, 247, 251, 0.35);
-    --button-secondary: rgba(15, 23, 42, 0.05);
+    --ink: #12201A;
+
+    --border: rgba(18, 32, 26, 0.12);
+
+    --shadow:
+        0 20px 55px rgba(38, 48, 42, 0.10);
+
+    --glow-green: rgba(63, 111, 82, 0.07);
+    --glow-gold: rgba(201, 154, 68, 0.08);
+
+    --topbar-bg: rgba(243, 239, 230, 0.78);
+
+    --button-secondary:
+        rgba(18, 32, 26, 0.055);
 
     color-scheme: light;
 }
+
 
 /* =========================================
 CONTAINER
@@ -127,22 +149,28 @@ CONTAINER
     margin: 0 auto;
 }
 
+
 /* =========================================
 TOPBAR
 ========================================= */
 
 .topbar {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 100;
 
     background: var(--topbar-bg);
-    border-bottom: 1px solid var(--border);
 
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    border-bottom:
+        1px solid var(--border);
+
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
 
     transition:
         background 0.35s ease,
@@ -151,74 +179,104 @@ TOPBAR
 
 .topbar-content {
     width: 100%;
+
     min-height: 72px;
+
     padding: 0 20px;
 
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
     align-items: center;
 
     gap: 20px;
 }
 
-/* Logo — colado na esquerda */
+
+/* =========================================
+BRAND
+========================================= */
+
 .brand {
     display: inline-flex;
+
     align-items: center;
+
     justify-self: start;
-}
-
-/* Título — centralizado na página */
-.topbar-title {
-    justify-self: center;
-
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-}
-
-/* Botão — colado na direita */
-.theme-toggle {
-    justify-self: end;
-}
-
-/* Logo — colado na esquerda */
-.brand {
-    display: inline-flex;
-    align-items: center;
 }
 
 .brand img {
     width: 44px;
     height: 44px;
+
     object-fit: contain;
+
     border-radius: 50%;
 }
 
+
 /* =========================================
-THEME TOGGLE — colado na direita da barra
+TOPBAR TITLE
+========================================= */
+
+.topbar-title {
+    justify-self: center;
+
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
+
+    font-size: 1.15rem;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    letter-spacing: -0.025em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+THEME TOGGLE
 ========================================= */
 
 .theme-toggle {
+    justify-self: end;
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 8px;
 
-    min-height: 44px;
-    padding: 0 16px;
+    min-height: 42px;
 
-    border: 1px solid var(--border);
+    padding: 0 15px;
+
+    border:
+        1px solid var(--border);
+
     border-radius: 999px;
 
     color: var(--text);
+
     background: var(--card);
 
     cursor: pointer;
 
-    font-size: 0.82rem;
-    font-weight: 800;
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
 
     transition:
         transform 0.2s ease,
@@ -229,14 +287,19 @@ THEME TOGGLE — colado na direita da barra
 
 .theme-toggle:hover {
     transform: translateY(-2px);
-    border-color: var(--primary-light);
-    box-shadow: 0 8px 28px rgba(124, 92, 255, 0.22);
+
+    border-color:
+        rgba(201, 154, 68, 0.55);
+
+    box-shadow:
+        0 8px 24px rgba(201, 154, 68, 0.12);
 }
 
 .theme-icon {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1;
 }
+
 
 /* =========================================
 HERO
@@ -246,14 +309,17 @@ HERO
     min-height: 72vh;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     text-align: center;
 
-    padding: 130px 0 60px;
+    padding:
+        130px 0 60px;
 
     position: relative;
+
     overflow: hidden;
 }
 
@@ -262,22 +328,29 @@ HERO
 
     position: absolute;
 
-    width: 450px;
-    height: 450px;
+    width: 520px;
+    height: 520px;
 
     border-radius: 50%;
 
-    background: var(--glow-primary);
+    background:
+        radial-gradient(
+            circle,
+            rgba(63, 111, 82, 0.20),
+            transparent 68%
+        );
 
-    filter: blur(80px);
+    filter: blur(35px);
 
-    top: -180px;
+    top: -240px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     pointer-events: none;
 }
+
 
 /* =========================================
 LOGO
@@ -287,27 +360,39 @@ LOGO
     width: 100px;
     height: 100px;
 
-    margin: 0 auto 28px;
+    margin:
+        0 auto 28px;
 
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background:
-        linear-gradient(145deg,
+        linear-gradient(
+            145deg,
             var(--bg-secondary),
-            var(--bg));
+            var(--bg)
+        );
 
-    border: 1px solid rgba(167, 139, 250, 0.45);
+    border:
+        1px solid
+        rgba(201, 154, 68, 0.42);
 
     box-shadow:
-        0 0 0 6px rgba(124, 92, 255, 0.06),
-        0 0 45px rgba(124, 92, 255, 0.28),
-        inset 0 0 30px rgba(124, 92, 255, 0.08);
+        0 0 0 6px
+        rgba(201, 154, 68, 0.045),
+
+        0 18px 45px
+        rgba(3, 19, 13, 0.18),
+
+        inset 0 0 25px
+        rgba(201, 154, 68, 0.05);
 
     position: relative;
+
     z-index: 1;
 
     overflow: hidden;
@@ -316,30 +401,45 @@ LOGO
 .logo img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
+
 /* =========================================
-BADGE
+BADGE / STATUS
 ========================================= */
 
 .badge {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
 
-    padding: 7px 14px;
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        7px 13px;
 
     border-radius: 999px;
 
-    background: rgba(124, 92, 255, 0.1);
+    background:
+        rgba(143, 227, 176, 0.08);
 
-    border: 1px solid rgba(124, 92, 255, 0.25);
+    border:
+        1px solid
+        rgba(143, 227, 176, 0.22);
 
-    color: var(--primary-light);
+    color: var(--green);
 
-    font-size: 13px;
-    font-weight: 700;
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.03em;
 
     margin-bottom: 22px;
 }
@@ -355,49 +455,67 @@ BADGE
     background: var(--green);
 
     box-shadow:
-        0 0 12px var(--green);
+        0 0 0 3px
+        rgba(143, 227, 176, 0.08);
 }
+
 
 /* =========================================
 TYPOGRAPHY
 ========================================= */
 
 h1 {
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
 
-    line-height: 0.98;
+    font-size:
+        clamp(3.2rem, 8vw, 6.8rem);
 
-    letter-spacing: -0.06em;
+    line-height: 0.91;
 
-    margin-bottom: 24px;
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    margin-bottom: 28px;
 }
 
 h1 span {
-    background:
-        linear-gradient(90deg,
-            var(--text),
-            var(--primary-light),
-            var(--cyan));
+    color: var(--text);
 
-    -webkit-background-clip: text;
-    background-clip: text;
+    background: none;
 
-    color: transparent;
+    -webkit-background-clip: initial;
+    background-clip: initial;
 }
 
 .hero-subtitle {
-    max-width: 760px;
+    max-width: 720px;
 
     margin: 0 auto;
 
     color: var(--text-secondary);
 
-    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(1rem, 2vw, 1.18rem);
+
+    line-height: 1.75;
 }
 
 .hero-subtitle strong {
     color: var(--text);
+
+    font-weight: 700;
 }
+
 
 /* =========================================
 SECTION
@@ -409,20 +527,34 @@ SECTION
 
 .section-header {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
 
-    letter-spacing: -0.04em;
+    font-size:
+        clamp(2.3rem, 4vw, 3.6rem);
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    letter-spacing: -0.045em;
 
     margin-bottom: 12px;
 }
 
 .section-header p {
     color: var(--text-secondary);
+
+    font-size: 0.95rem;
 }
+
 
 /* =========================================
 PLAYLIST GRID
@@ -437,6 +569,7 @@ PLAYLIST GRID
     gap: 18px;
 }
 
+
 /* =========================================
 PLAYLIST CARD
 ========================================= */
@@ -444,22 +577,25 @@ PLAYLIST CARD
 .playlist {
     position: relative;
 
-    padding: 24px;
+    padding: 26px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     background: var(--card);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     box-shadow: var(--shadow);
 
+    -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
 
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
-        background 0.25s ease;
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 
     overflow: hidden;
 }
@@ -469,57 +605,82 @@ PLAYLIST CARD
 
     position: absolute;
 
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 
     border-radius: 50%;
 
-    background: rgba(124, 92, 255, 0.09);
+    background:
+        rgba(201, 154, 68, 0.055);
 
-    filter: blur(25px);
+    filter: blur(30px);
 
-    top: -40px;
-    right: -40px;
+    top: -55px;
+    right: -55px;
 
     pointer-events: none;
 }
 
 .playlist:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 
     background: var(--card-hover);
 
-    border-color: rgba(167, 139, 250, 0.4);
+    border-color:
+        rgba(201, 154, 68, 0.34);
+
+    box-shadow:
+        0 24px 60px
+        rgba(3, 19, 13, 0.16);
 }
 
+
 /* =========================================
-NUMBER
+NUMBER / TECH LABEL
 ========================================= */
 
 .number {
     width: 36px;
     height: 36px;
 
-    border-radius: 11px;
+    border-radius: 8px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    background: rgba(124, 92, 255, 0.12);
+    background:
+        rgba(143, 227, 176, 0.07);
 
-    border: 1px solid rgba(124, 92, 255, 0.25);
+    border:
+        1px solid
+        rgba(143, 227, 176, 0.20);
 
-    color: var(--primary-light);
+    color: var(--green);
 
-    font-weight: 800;
-    font-size: 13px;
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-weight: 600;
+
+    font-size: 0.72rem;
 
     margin-bottom: 20px;
 }
 
 .playlist h3 {
-    font-size: 1.05rem;
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 500;
+
+    font-style: italic;
 
     margin-bottom: 8px;
 
@@ -534,59 +695,76 @@ NUMBER
     margin-bottom: 20px;
 }
 
+
 /* =========================================
 PLAYLIST LINK
 ========================================= */
 
 .playlist-link {
     display: inline-flex;
+
     align-items: center;
 
     gap: 8px;
 
     color: var(--text);
 
-    font-size: 0.88rem;
-    font-weight: 700;
+    font-family:
+        "JetBrains Mono",
+        monospace;
 
-    transition: color 0.2s ease;
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
 }
 
 .playlist-link:hover {
-    color: var(--cyan);
+    color: var(--gold-light);
 }
 
 .arrow {
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
 }
 
 .playlist-link:hover .arrow {
-    transform: translateX(4px);
+    transform:
+        translateX(4px);
 }
+
 
 /* =========================================
 CTA
 ========================================= */
 
 .cta {
-    margin: 40px 0 80px;
+    margin:
+        40px 0 80px;
 
-    padding: 60px 40px;
+    padding:
+        65px 40px;
 
     text-align: center;
 
-    border-radius: 30px;
+    border-radius: 26px;
 
     position: relative;
 
     overflow: hidden;
 
     background:
-        linear-gradient(135deg,
-            rgba(124, 92, 255, 0.18),
-            rgba(34, 211, 238, 0.08));
+        linear-gradient(
+            135deg,
+            rgba(63, 111, 82, 0.28),
+            rgba(201, 154, 68, 0.08)
+        );
 
-    border: 1px solid rgba(167, 139, 250, 0.2);
+    border:
+        1px solid
+        rgba(201, 154, 68, 0.22);
 
     box-shadow: var(--shadow);
 }
@@ -596,30 +774,47 @@ CTA
 
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 360px;
+    height: 360px;
 
-    background: var(--glow-primary);
+    background:
+        radial-gradient(
+            circle,
+            rgba(143, 227, 176, 0.09),
+            transparent 68%
+        );
 
-    filter: blur(70px);
+    filter: blur(40px);
 
     border-radius: 50%;
 
-    top: -150px;
+    top: -190px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .cta-content {
     position: relative;
+
     z-index: 1;
 }
 
 .cta h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
 
-    letter-spacing: -0.04em;
+    font-size:
+        clamp(2.3rem, 4vw, 3.7rem);
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    letter-spacing: -0.045em;
 
     margin-bottom: 15px;
 }
@@ -627,10 +822,12 @@ CTA
 .cta p {
     max-width: 650px;
 
-    margin: 0 auto 28px;
+    margin:
+        0 auto 28px;
 
     color: var(--text-secondary);
 }
+
 
 /* =========================================
 BUTTONS
@@ -656,58 +853,185 @@ BUTTONS
 
     min-height: 48px;
 
-    padding: 0 22px;
+    padding:
+        0 22px;
 
-    border-radius: 12px;
+    border-radius: 10px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
 
     font-weight: 800;
-    font-size: 0.9rem;
+
+    font-size: 0.86rem;
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
+
+
+/* =========================================
+PRIMARY BUTTON
+========================================= */
 
 .btn-primary {
-    color: #fff;
+    color: #F3EFE6;
 
     background:
-        linear-gradient(135deg,
-            #7c5cff,
-            #5b43d6);
+        var(--ink);
+
+    border:
+        1px solid
+        rgba(243, 239, 230, 0.08);
 
     box-shadow:
-        0 10px 30px rgba(124, 92, 255, 0.25);
+        0 10px 28px
+        rgba(18, 32, 26, 0.18);
 }
+
+.btn-primary:hover {
+    box-shadow:
+        0 14px 32px
+        rgba(18, 32, 26, 0.25);
+}
+
+
+/* =========================================
+SECONDARY BUTTON
+========================================= */
 
 .btn-secondary {
     color: var(--text);
 
-    background: var(--button-secondary);
+    background:
+        var(--button-secondary);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 }
+
+.btn-secondary:hover {
+    border-color:
+        rgba(201, 154, 68, 0.45);
+}
+
+
+/* =========================================
+PASS / APPROVED
+Use sparingly
+========================================= */
+
+.pass {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--green);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+}
+
+.pass::before {
+    content: "✓";
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    color: var(--ink);
+
+    background:
+        var(--green);
+}
+
+
+/* =========================================
+TECH META / TAGS
+========================================= */
+
+.tag,
+.meta,
+.status {
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.035em;
+}
+
+.tag {
+    display: inline-flex;
+
+    padding:
+        5px 8px;
+
+    border-radius: 5px;
+
+    color: var(--text-secondary);
+
+    background:
+        rgba(243, 239, 230, 0.055);
+
+    border:
+        1px solid var(--border);
+}
+
 
 /* =========================================
 FOOTER
 ========================================= */
 
 footer {
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
-    padding: 35px 0 45px;
+    padding:
+        35px 0 45px;
 
     text-align: center;
 }
 
 .footer-message {
-    font-size: 1.2rem;
+    font-family:
+        "Newsreader",
+        Georgia,
+        serif;
 
-    font-weight: 700;
+    font-size: 1.45rem;
+
+    font-weight: 500;
+
+    font-style: italic;
 
     margin-bottom: 20px;
 }
@@ -719,7 +1043,11 @@ footer {
 
     color: var(--text-secondary);
 
-    font-size: 0.82rem;
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.68rem;
 
     line-height: 2;
 }
@@ -729,8 +1057,13 @@ footer {
 
     color: var(--text-secondary);
 
-    font-size: 0.78rem;
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 0.68rem;
 }
+
 
 /* =========================================
 RESPONSIVE
@@ -739,20 +1072,27 @@ RESPONSIVE
 @media (max-width: 900px) {
 
     .playlist-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
-
 }
+
 
 @media (max-width: 600px) {
 
     .container {
-        width: min(100% - 28px, 1120px);
+        width:
+            min(
+                100% - 28px,
+                1120px
+            );
     }
 
     .topbar-content {
         min-height: 64px;
-        padding: 0 14px;
+
+        padding:
+            0 14px;
     }
 
     .brand img {
@@ -761,7 +1101,8 @@ RESPONSIVE
     }
 
     .theme-toggle {
-        padding: 0 12px;
+        padding:
+            0 12px;
     }
 
     .hero {
@@ -769,8 +1110,13 @@ RESPONSIVE
 
         padding:
             110px 0 50px;
+    }
 
+    h1 {
+        font-size:
+            clamp(3rem, 16vw, 4.5rem);
 
+        line-height: 0.92;
     }
 
     .playlist-grid {
@@ -778,17 +1124,17 @@ RESPONSIVE
     }
 
     .section {
-        padding: 50px 0;
+        padding:
+            50px 0;
     }
 
     .cta {
-        padding: 45px 22px;
+        padding:
+            45px 22px;
 
-        border-radius: 24px;
+        border-radius: 22px;
 
         margin-bottom: 50px;
-
-
     }
 
     .buttons {
@@ -800,10 +1146,10 @@ RESPONSIVE
     }
 
     #themeText {
-    display: none;
+        display: none;
+    }
 }
 
-}
 
 /* =========================================
 REDUCED MOTION
@@ -820,5 +1166,4 @@ REDUCED MOTION
     *::after {
         transition: none !important;
     }
-
 }
