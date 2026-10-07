@@ -19,7 +19,9 @@ Preparei 13 playlists completas pra você dominar QA de verdade — do básico a
 💡 Tudo explicado de forma simples, prática e com exemplos reais, pra você aplicar no dia a dia e evoluir mais rápido.
 
 📌 Inscreva-se no canal: https://lnkd.in/dgVAPDHr
+
 🔔 Ative o sininho
+
 👍 Curta e compartilhe com a galera de QA
 
 💬 Nosso Discord: https://lnkd.in/dtdikh8T
